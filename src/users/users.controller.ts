@@ -1,9 +1,19 @@
-import { Body, Controller, Delete, Get, Param, Patch, Post } from '@nestjs/common';
+import {
+  Body,
+  Controller,
+  Delete,
+  Get,
+  Param,
+  Patch,
+  Post,
+  Query,
+} from '@nestjs/common';
 
 @Controller('users')
 export class UsersController {
-  @Get()
-  getAllUsers() {
+  @Get() //GET /users or /users?role=value  query params
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
+  getAllUsers(@Query('role') role?: 'INTERNS' | 'ENGINEER' | 'ADMIN') {
     return [];
   }
 
